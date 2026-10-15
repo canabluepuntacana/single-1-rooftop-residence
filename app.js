@@ -100,13 +100,6 @@ document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{
   t.classList.add('active'); document.getElementById(t.dataset.tab).classList.add('active');
 });
 
-/* ---------- Share ---------- */
-$('#shareBtn').onclick=async()=>{
-  const data={title:document.title,text:'Single 1 Rooftop Residence US$162,500',url:location.href};
-  if(navigator.share){try{await navigator.share(data);}catch(e){}}
-  else{await navigator.clipboard.writeText(location.href); alert('Link copied');}
-};
-
 /* ---------- Lead form -> WhatsApp ---------- */
 $('#leadForm').addEventListener('submit',e=>{
   e.preventDefault();
