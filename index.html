@@ -40,7 +40,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=4">
+<link rel="stylesheet" href="styles.css?v=5">
 <!-- Icons: react-icons (Feather `fi` + Lucide `lu` sets), inline SVG | Motion: framer-motion engine (Motion One CDN) -->
 <script defer src="https://cdn.jsdelivr.net/npm/motion@10/dist/motion.js"></script>
 <script type="application/ld+json">
@@ -224,7 +224,7 @@
       <h3>Request information <span>we reply in under 2 hours</span></h3>
       <div class="row2"><label>First name*<input required name="nombre" placeholder="John"></label><label>Last name*<input required name="apellido" placeholder="Smith"></label></div>
       <div class="row2"><label>Email*<input required type="email" name="email" placeholder="john@mail.com"></label><label>Phone*<input required type="tel" name="tel" placeholder="+1 ..."></label></div>
-      <div class="row2"><label>Country<select name="pais" id="countrySelect"><option value="">Select country...</option></select></label><label>Budget<select name="budget"><option>150k - 250k</option><option>Below 150k</option><option>250k - 350k</option></select></label></div>
+      <div class="row2"><label>Country<select name="pais" id="countrySelect"><option value="">Select country...</option></select></label><label>Budget<select name="budget" id="budgetSelect"><option value="">Select budget...</option><option>150k - 250k</option><option>Below 150k</option><option>250k - 350k</option></select></label></div>
       <label>Message<textarea name="msg" rows="3">Hello, I want more info on Single 1 Rooftop Residence (Ref 21236). I would like to schedule a tour.</textarea></label>
       <label class="check"><input type="checkbox" id="consent" checked> I agree to receive promos and updates from Cana Blue.</label>
       <button class="btn btn-primary full" type="submit"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send via WhatsApp</button>
@@ -259,6 +259,6 @@
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" hidden><button id="lbClose" aria-label="Close"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><img id="lbImg" alt="Enlarged photo"><div class="lb-nav"><button id="lbPrev">‹</button><span id="lbCount"></span><button id="lbNext">›</button></div></div>
 
-<script src="app.js?v=2" defer></script>
+<script src="app.js?v=3" defer></script>
 </body>
 </html>

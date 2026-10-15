@@ -104,6 +104,67 @@ document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{
 const COUNTRIES=["Afghanistan","Albania","Algeria","Andorra","Angola","Antigua and Barbuda","Argentina","Armenia","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bhutan","Bolivia","Bosnia and Herzegovina","Botswana","Brazil","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada","Cape Verde","Central African Republic","Chad","Chile","China","Colombia","Comoros","Congo","Costa Rica","Croatia","Cuba","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Eswatini","Ethiopia","Fiji","Finland","France","Gabon","Gambia","Georgia","Germany","Ghana","Greece","Grenada","Guatemala","Guinea","Guinea-Bissau","Guyana","Haiti","Honduras","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Israel","Italy","Jamaica","Japan","Jordan","Kazakhstan","Kenya","Kiribati","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Morocco","Mozambique","Myanmar","Namibia","Nauru","Nepal","Netherlands","New Zealand","Nicaragua","Niger","Nigeria","North Korea","North Macedonia","Norway","Oman","Pakistan","Palau","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Puerto Rico","Qatar","Romania","Russia","Rwanda","Saint Kitts and Nevis","Saint Lucia","Saint Vincent and the Grenadines","Samoa","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","Sudan","Suriname","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor-Leste","Togo","Tonga","Trinidad and Tobago","Tunisia","Turkey","Turkmenistan","Tuvalu","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Yemen","Zambia","Zimbabwe"];
 const countrySelect=$('#countrySelect');
 if(countrySelect){ COUNTRIES.forEach(c=>{ const o=document.createElement('option'); o.value=c; o.textContent=c; countrySelect.appendChild(o); }); }
+customSelect(countrySelect,{search:true,placeholder:'Select country...'});
+customSelect(document.querySelector('#budgetSelect'),{placeholder:'Select budget...'});
+
+/* ---------- Custom dropdowns (themed, no native UI) ---------- */
+function customSelect(sel,opts){
+  opts=opts||{}; const withSearch=!!opts.search, placeholder=opts.placeholder||'Select...';
+  if(!sel) return;
+  const wrap=document.createElement('div'); wrap.className='cselect';
+  sel.parentNode.insertBefore(wrap,sel); wrap.appendChild(sel);
+  const btn=document.createElement('button'); btn.type='button'; btn.className='cselect-btn';
+  btn.setAttribute('aria-haspopup','listbox'); btn.setAttribute('aria-expanded','false');
+  btn.innerHTML='<span class="ph"></span><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>';
+  const panel=document.createElement('div'); panel.className='cselect-panel'; panel.setAttribute('role','listbox');
+  let searchInput=null;
+  if(withSearch){
+    const s=document.createElement('div'); s.className='cselect-search';
+    searchInput=document.createElement('input'); searchInput.type='text';
+    searchInput.placeholder='Search country...'; searchInput.setAttribute('aria-label','Search country');
+    s.appendChild(searchInput); panel.appendChild(s);
+  }
+  const list=document.createElement('div'); panel.appendChild(list);
+  wrap.appendChild(btn); wrap.appendChild(panel);
+  function render(filter){
+    filter=(filter||'').toLowerCase(); list.innerHTML='';
+    let n=0;
+    [...sel.options].forEach(o=>{
+      if(o.value==='') return;
+      if(filter && o.text.toLowerCase().indexOf(filter)<0) return;
+      n++;
+      const b=document.createElement('button'); b.type='button';
+      b.className='cselect-opt'+(sel.value===o.value?' sel':'');
+      b.setAttribute('role','option'); b.setAttribute('aria-selected',sel.value===o.value?'true':'false');
+      const t=document.createElement('span'); t.textContent=o.text; b.appendChild(t);
+      b.insertAdjacentHTML('beforeend','<svg class="tick" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>');
+      b.onclick=()=>{ sel.value=o.value; sync(); close(); };
+      list.appendChild(b);
+    });
+    if(!n) list.innerHTML='<div class="cselect-empty">No results</div>';
+  }
+  function sync(){
+    const o=sel.selectedOptions[0], label=btn.querySelector('span');
+    if(o&&o.value){ label.textContent=o.text; label.classList.remove('ph'); }
+    else { label.textContent=placeholder; label.classList.add('ph'); }
+    render(searchInput?searchInput.value:'');
+  }
+  function open(){
+    document.querySelectorAll('.cselect.open').forEach(x=>{ if(x!==wrap){ x.classList.remove('open'); x.querySelector('.cselect-btn').setAttribute('aria-expanded','false'); } });
+    wrap.classList.add('open'); btn.setAttribute('aria-expanded','true');
+    if(searchInput){ searchInput.value=''; render(''); setTimeout(()=>searchInput.focus(),60); } else render('');
+  }
+  function close(){ wrap.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+  btn.addEventListener('click',e=>{ e.stopPropagation(); wrap.classList.contains('open')?close():open(); });
+  if(searchInput){
+    searchInput.addEventListener('input',()=>render(searchInput.value));
+    searchInput.addEventListener('click',e=>e.stopPropagation());
+    searchInput.addEventListener('keydown',e=>{ e.stopPropagation(); if(e.key==='Enter'){ e.preventDefault(); const f=list.querySelector('.cselect-opt'); if(f) f.click(); } });
+  }
+  document.addEventListener('click',e=>{ if(!wrap.contains(e.target)) close(); });
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') close(); });
+  sync();
+}
 
 /* ---------- Lead form -> WhatsApp ---------- */
 $('#leadForm').addEventListener('submit',e=>{

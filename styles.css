@@ -176,6 +176,25 @@ svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke
 }
 /* official WhatsApp glyph: solid fill, no stroke */
 svg.wa{fill:currentColor;stroke:none}
+/* custom select */
+.cselect{position:relative}
+.cselect select{display:none}
+.cselect-btn{width:100%;display:flex;align-items:center;justify-content:space-between;gap:10px;border:1px solid var(--line);border-radius:var(--radius-s);padding:12px;font-size:.95rem;background:#FBFCFE;color:var(--ink);cursor:pointer;font-family:inherit;text-transform:none;letter-spacing:0;font-weight:400}
+.cselect-btn .ph{color:#8A97BD}
+.cselect-btn svg{transition:transform .25s;stroke:var(--navy)}
+.cselect.open .cselect-btn{border-color:var(--blue);outline:1px solid var(--blue);background:#fff}
+.cselect.open .cselect-btn svg{transform:rotate(180deg)}
+.cselect-panel{position:absolute;top:calc(100% + 6px);left:0;right:0;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);z-index:30;max-height:250px;overflow:auto;display:none}
+.cselect.open .cselect-panel{display:block;animation:fade .2s}
+.cselect-search{position:sticky;top:0;background:#fff;padding:8px;border-bottom:1px solid var(--line)}
+.cselect-search input{width:100%;border:1px solid var(--line);border-radius:var(--radius-s);padding:9px 11px;font-size:.88rem;font-family:inherit}
+.cselect-search input:focus{outline:1px solid var(--blue);border-color:var(--blue)}
+.cselect-opt{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;background:none;border:0;text-align:left;padding:11px 14px;font-size:.9rem;cursor:pointer;color:var(--ink);font-family:inherit}
+.cselect-opt:hover{background:#EFF3FF}
+.cselect-opt.sel{color:var(--navy);font-weight:600;background:#F4F7FF}
+.cselect-opt .tick{width:15px;height:15px;stroke:var(--blue);visibility:hidden}
+.cselect-opt.sel .tick{visibility:visible}
+.cselect-empty{padding:14px;color:var(--mut);font-size:.85rem}
 /* motion defaults (JS animates; visible without JS) */
 [data-motion]{will-change:transform,opacity}
 @media(max-width:960px){
