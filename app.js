@@ -78,7 +78,7 @@ paint(); restartAuto();
 /* ---------- Gallery section grid + lightbox ---------- */
 const photoGrid=$('#photoGrid');
 if(photoGrid){
-  photoGrid.innerHTML=IMAGES.map((im,i)=>`<figure data-idx="${i}" tabindex="0" role="button" aria-label="Enlarge: ${im.alt}"><img loading="lazy" src="${im.src}" alt="${im.alt}"><figcaption><span>${pad(i+1)} — ${im.alt}</span><svg viewBox="0 0 24 24"><path d="M15 3h6v6"/><path d="M9 21H3v-6"/><path d="M21 3l-7 7"/><path d="M3 21l7-7"/></svg></figcaption></figure>`).join('');
+  photoGrid.innerHTML=IMAGES.map((im,i)=>`<figure data-idx="${i}" tabindex="0" role="button" aria-label="Enlarge: ${im.alt}"><img loading="lazy" src="${im.src}" alt="${im.alt}"><figcaption><span>${pad(i+1)} · ${im.alt}</span><svg viewBox="0 0 24 24"><path d="M15 3h6v6"/><path d="M9 21H3v-6"/><path d="M21 3l-7 7"/><path d="M3 21l7-7"/></svg></figcaption></figure>`).join('');
   photoGrid.addEventListener('click',e=>{
     const f=e.target.closest('figure'); if(!f) return;
     idx=+f.dataset.idx; paint(); restartAuto(); openLB();
