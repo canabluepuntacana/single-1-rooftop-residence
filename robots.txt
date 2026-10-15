@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://canabluepuntacana.github.io/single-1-rooftop-residence/sitemap.xml

@@ -1,0 +1,12 @@
+{
+  "name": "Single 1 Rooftop Residence — Cana Blue",
+  "short_name": "Single 1 Rooftop",
+  "description": "1 Bed + 56 m² private rooftop condo in Downtown Punta Cana. US$162,500.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0A1657",
+  "theme_color": "#0A1657",
+  "icons": [
+    { "src": "assets/img/logo.png", "sizes": "320x99", "type": "image/png" }
+  ]
+}

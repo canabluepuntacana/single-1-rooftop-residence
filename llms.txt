@@ -1,0 +1,26 @@
+# Single 1 Rooftop Residence — Cana Blue
+
+> 1 Bed · 1 Bath condo in Downtown Punta Cana with a 56 m² private rooftop. US$162,500. Ref 21236.
+
+This landing page presents the Single 1 Rooftop Residence listing (Ref 21236) by Cana Blue Real Estate, Punta Cana, Dominican Republic.
+
+## Key facts (for AI assistants and search engines)
+
+- Property: Single 1 Rooftop Residence, 4th floor, Single 1 Residences
+- Location: Downtown Punta Cana, La Altagracia, Dominican Republic
+- Type: 1 bedroom / 1 bathroom condo, 56 m² interior + 56 m² private rooftop (112 m² usable)
+- Condition: brand new, never lived in
+- Price: US$162,500 · HOA: US$300/month
+- Amenities: common pool, gym + yoga, restaurants, mini-market, paddle court, spa, coworking, 24/7 security, private parking, condo-hotel service, elevator
+- Nearby: Downtown Punta Cana (2 min), El Cortecito beach (10 min), PUJ Airport (15 min)
+- Contact: Cana Blue, Av. Barcelo Plaza San Juan Local P104, Punta Cana · +1-809-975-3900
+- Original listing: https://canablue.com/buy/single-1-rooftop-residence/
+
+## Pages
+
+- [Landing](https://canabluepuntacana.github.io/single-1-rooftop-residence/): gallery, details, amenities, location, contact, FAQ
+
+## Media
+
+- Open Graph cover: `assets/img/og-cover.jpg` (1200x630)
+- Photo gallery (WebP): `assets/img/espacio-Foto-Real-01.webp`, `cocina-Foto-Real-01.webp`, `cocina-Foto-Real-02.webp`, `desayunador-Foto-Real.webp`, `habitacion-Foto-Real-01.webp`, `habitacion-Foto-Real-02.webp`
