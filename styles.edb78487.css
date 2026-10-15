@@ -212,7 +212,11 @@ svg.wa{fill:currentColor;stroke:none}
 .agent-grid{display:grid;grid-template-columns:250px 1fr;gap:48px;align-items:start}
 .agent-photo img{width:100%;max-width:250px;height:auto;display:block}
 .agent-grid h2{margin-bottom:6px}
-.agent-grid .role{color:var(--blue);font-weight:600;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;margin:0 0 20px}
+.agent-grid .role{color:var(--blue);font-weight:600;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;margin:0 0 6px}
+.lang-flags{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 20px}
+.lang{display:inline-flex;align-items:center;gap:9px;font-size:.82rem;font-weight:600;color:var(--navy);border:1px solid var(--line);background:#F7F9FF;padding:8px 14px 8px 9px;border-radius:99px;transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s;cursor:default}
+.lang:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(10,22,87,.16)}
+.lang svg{width:22px;height:15px;border-radius:3px;overflow:hidden;stroke:none;box-shadow:0 0 0 1px rgba(10,22,87,.14)}
 .bio{border-top:1px solid var(--line);padding-top:20px}
 .bio p{color:#3A476E;line-height:1.8;margin:0 0 14px;font-size:.95rem}
 .bio p:first-child{font-size:1.06rem;color:var(--ink)}
