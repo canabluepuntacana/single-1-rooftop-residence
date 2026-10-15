@@ -44,10 +44,10 @@ svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke
 .hero-overlay{position:relative;z-index:3;color:#fff;padding-top:90px;padding-bottom:26px}
 .badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
 .badge{font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:7px 14px;border:1px solid rgba(255,255,255,.45);color:#fff;background:rgba(255,255,255,.08);backdrop-filter:blur(6px)}
-.badge.gold{border-color:var(--gold);color:var(--gold);background:rgba(201,169,106,.12)}
+.badge.gold{border-color:var(--gold);color:#DCE9FF;background:rgba(127,178,255,.16)}
 .hero-title{font-size:clamp(2.6rem,6.4vw,5rem);font-weight:800;color:#fff;margin:0 0 10px;text-transform:none;text-shadow:0 2px 26px rgba(0,0,0,.55)}
 .hero-title .line{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
-.hero-title .accent{color:transparent;background:linear-gradient(92deg,#9DC4FF,#4DA6FF 55%,#C9A96A);-webkit-background-clip:text;background-clip:text}
+.hero-title .accent{color:transparent;background:linear-gradient(92deg,#FFFFFF,#BFD9FF);-webkit-background-clip:text;background-clip:text}
 .hero-title .ch{display:inline-block;will-change:transform}
 .hero-sub{display:flex;gap:10px;align-items:center;color:#fff;font-size:1.02rem;font-weight:500;margin:0 0 20px;text-shadow:0 1px 12px rgba(0,0,0,.6)}.hero-sub svg{stroke:var(--gold)}
 .hero-price{display:flex;gap:28px;align-items:flex-end;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.25);padding-top:18px;margin-bottom:20px}
