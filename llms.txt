@@ -13,13 +13,13 @@ This landing page presents the Single 1 Rooftop Residence listing (Ref 21236) by
 - Price: US$162,500 · HOA: US$300/month
 - Amenities: common pool, gym + yoga, restaurants, mini-market, paddle court, spa, coworking, 24/7 security, private parking, condo-hotel service, elevator
 - Nearby: Downtown Punta Cana (2 min), El Cortecito beach (10 min), PUJ Airport (15 min)
-- Contact: Cana Blue, Av. Barcelo Plaza San Juan Local P104, Punta Cana · +1-809-975-3900
+- Contact: Pamela Nuñez (Founder, Cana Blue), +1-809-975-3900 · pamela@canablue.com
 - Main website: https://canablue.com
 - Original listing: https://canablue.com/buy/single-1-rooftop-residence/
 
 ## Pages
 
-- [Landing](https://canabluepuntacana.github.io/single-1-rooftop-residence/): gallery, details, amenities, location, contact, FAQ
+- [Landing](https://canabluepuntacana.github.io/single-1-rooftop-residence/): hero slider, photo gallery, details, amenities, location, agent, contact
 
 ## Media
 
