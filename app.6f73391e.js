@@ -31,10 +31,12 @@ const counter=$('#slideCounter'), bar=$('#autoBar');
 /* ---------- Full-width hero slider ---------- */
 const slidesEl=$('#slides'), thumbs=$('#thumbs');
 IMAGES.forEach((im,i)=>{
-  const f=document.createElement('figure');
-  f.className='slide'+(i===0?' active':'');
-  f.innerHTML=`<img src="${im.src}" alt="${im.alt}" width="1080" height="607" decoding="async" ${i>0?'loading="lazy"':''} ${i===0?'fetchpriority="high"':''}>`;
-  slidesEl.appendChild(f);
+  if(i>0){
+    const f=document.createElement('figure');
+    f.className='slide';
+    f.innerHTML=`<img src="${im.src}" alt="${im.alt}" width="1080" height="607" decoding="async" loading="lazy">`;
+    slidesEl.appendChild(f);
+  }
   const b=document.createElement('button');
   b.innerHTML=`<img loading="lazy" src="${im.src}" alt="${im.alt}">`;
   b.setAttribute('aria-label','Photo '+(i+1)+': '+im.alt);
